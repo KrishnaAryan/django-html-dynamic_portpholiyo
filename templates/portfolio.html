@@ -1,0 +1,104 @@
+{% load static %}
+
+<div class="dizme_tm_section" id="portfolio">
+    <div class="dizme_tm_portfolio">
+        
+        <div class="container">
+            <div class="dizme_tm_main_title" data-align="center">
+                <span>Portfolio</span>
+                <h3>My Amazing Jurny</h3>
+                <p>Most common methods for designing websites that work well on desktop is responsive and adaptive design</p>
+            </div>
+            <div class="portfolio_filter">
+                <ul>
+                    <li><a href="#" data-filter=".detail">Detail</a></li>
+                </ul>
+            </div>
+            <div class="dizme_tm_portfolio_titles"></div>
+            <div class="portfolio_list wow fadeInUp" data-wow-duration="1s">
+                
+                <ul class="gallery_zoom grid">
+                    {% for i in portfolio %} 
+                    
+                
+                    <li class="detail grid-item">
+                        
+                        <div class="inner">
+                            <div class="entry dizme_tm_portfolio_animation_wrap" data-title="{{i.heading}}" data-category="Detail">
+                                <a class="portfolio_popup" href="#">
+                                    <img src="{% static 'img/thumbs/42-34.jpg' %}" alt />
+                                    <div class="main" data-img-url="/{{i.feature_image}}"></div>
+                                </a>
+                            </div>
+                            <div class="mobile_title">
+                                <h3>{{i.heading}}</h3>
+                                <span>Detail</span>
+                            </div>
+                            <div class="hidden_content">
+                                <div class="popup_details">
+                                    <div class="main_details">
+                                        <div class="textbox">
+                                            <p>{{i.description | safe}}</p>
+                            
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="additional_images">
+                                        <ul>
+                                            {% for image in portfolio_image %}
+                                            <li>
+                                                <div class="list_inner">
+                                                    <div class="my_image">
+                                                        <img src="{{ image.your_images.url }}" alt />
+                                                        <div class="main" data-img-url="{{ image.your_images.url }}"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        
+        <div class="brush_1 wow zoomIn" data-wow-duration="1s"><img src="{% static 'img/brushes/portfolio/1.png' %}" alt /></div>
+        <div class="brush_2 wow fadeInRight" data-wow-duration="1s"><img src="{% static 'img/brushes/portfolio/2.png' %}" alt /></div>
+    </div>
+</div>
+<div class="dizme_tm_section">
+    <div class="dizme_tm_skills">
+        <div class="container">
+            <div class="wrapper">
+                <div class="left">
+                    <div class="dizme_tm_main_title wow fadeInUp" data-wow-duration="1s" data-align="left">
+                        <span>Developer is Life</span>
+                        <h3>I Develop Skills Regularly to Keep Me Update</h3>
+                        <p>Most common methods for designing websites that work well on desktop is responsive and adaptive design</p>
+                    </div>
+                    <div class="dodo_progress wow fadeInUp" data-wow-duration="1s">
+                        {% for i in  your_skill %}
+                        <div class="progress_inner" data-value="{{i.level}}" data-color="#1cbe59">
+                            <span><span class="label">{{i.skill}}</span><span class="number">{{i.level}}%</span></span>
+                            <div class="background">
+                                <div class="bar">
+                                    <div class="bar_in"></div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="right">
+                    <img src="/{{i.photo}}" alt />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

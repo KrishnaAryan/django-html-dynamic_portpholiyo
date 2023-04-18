@@ -1,0 +1,77 @@
+{% load static %}
+
+<div class="dizme_tm_section" id="home">
+    <div class="dizme_tm_hero">
+        <div class="background" data-img-url="{% static 'img/slider/1.jpg' %}"></div>
+        <div class="container">
+            
+            <div class="content">
+                <div class="details">
+                    <div class="hello">
+                        <h3 class="orangeText">Hello, I'm</h3>
+                    </div>
+                    
+                    <div class="name">
+                        <h3>{{firstpage_info.name}}</h3>
+                    </div>
+                    
+                    <div class="job">
+                        <p>A <span class="greenText">{{firstpage_info.role}}</span></p>
+                    </div>
+                    <div class="text">
+                        <p>{{firstpage_info.about_short}}</p>
+                    </div>
+                    <div class="button">
+                        <div class="dizme_tm_button">
+                            <a class="anchor" href="#about"><span>About Me</span></a>
+                        </div>
+                        <div class="social">
+                            <ul>
+                                <li>
+                                    <a href="{{firstpage_info.facebook_url}}"><i class="icon-facebook-1"></i></a>
+                                </li>
+                                <li>
+                                    <a href="{{firstpage_info.twitter_link}}"><i class="icon-twitter-1"></i></a>
+                                </li>
+                                <li>
+                                    <a href="{{firstpage_info.linkedln_link}}"><i class="icon-linkedin-1"></i></a>
+                                </li>
+                                <li>
+                                    <a href="{{firstpage_info.instagram_link}}"><i class="icon-instagram-1"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="avatar">
+                    <div class="image">
+                        <img src="/{{firstpage_info.photo}}" alt />
+                        {% comment %} <span class="skills illustrator anim_moveBottom"><img class="svg" src="{% static 'img/svg/skills/illustrator.svg' %}" alt /></span>
+                        <span class="skills photoshop anim_moveBottom"><img class="svg" src="{% static 'img/svg/skills/photoshop.svg' %}" alt /></span>
+                        <span class="skills figma anim_moveBottom"><img class="svg" src="{% static 'img/svg/skills/figma.svg' %}" alt /></span> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dizme_tm_down">
+            <a class="anchor" href="#process">
+                <svg
+                    width="26px"
+                    height="100%"
+                    viewbox="0 0 247 390"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    style="fill-rule: evenodd; clip-rule: evenodd; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 1.5;"
+                >
+                    <path id="wheel" d="M123.359,79.775l0,72.843" style="fill: none; stroke: #000; stroke-width: 20px;" />
+                    <path
+                        id="mouse"
+                        d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z"
+                        style="fill: none; stroke: #000; stroke-width: 20px;"
+                    />
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>

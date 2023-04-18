@@ -1,0 +1,108 @@
+
+{% load static %}
+<div class="dizme_tm_section" id="process">
+    <div class="dizme_tm_process">
+        <div class="container">
+            <div class="list">
+                <ul>
+                    <li class="wow fadeInUp" data-wow-duration="1s">
+                        <div class="list_inner">
+                            <div class="icon">
+                                <span>
+                                    <img class="brush" src="{% static 'img/brushes/process/1.png' %}" alt />
+                                    <img class="svg" src="{% static 'img/svg/process/target.svg' %}" alt />
+                                </span>
+                            </div>
+                            <div class="title">
+                                <h3>Pixel Perfect</h3>
+                            </div>
+                            <div class="text">
+                                <p>Most common methods for designing websites that work well on desktop is responsive and adaptive design.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <div class="list_inner">
+                            <div class="icon">
+                                <span>
+                                    <img class="brush" src="{% static 'img/brushes/process/2.png' %}" alt />
+                                    <img class="svg" src="{% static 'img/svg/process/brush.svg' %}" alt />
+                                </span>
+                            </div>
+                            <div class="title">
+                                <h3>High Quality</h3>
+                            </div>
+                            <div class="text">
+                                <p>Most common methods for designing websites that work well on desktop is responsive and adaptive design.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+                        <div class="list_inner">
+                            <div class="icon">
+                                <span>
+                                    <img class="brush" src="{% static 'img/brushes/process/3.png' %}" alt />
+                                    <img class="svg" src="{% static 'img/svg/process/energy.svg' %}" alt />
+                                </span>
+                            </div>
+                            <div class="title">
+                                <h3>Awesome Idea</h3>
+                            </div>
+                            <div class="text">
+                                <p>Most common methods for designing websites that work well on desktop is responsive and adaptive design</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dizme_tm_section" id="about">
+    <div class="dizme_tm_about">
+        <div class="container">
+            <div class="wrapper">
+                <div class="left">
+                    <div class="image">
+                        <img src="/{{about.photo}}" alt />
+                        <div class="numbers year">
+                            <div class="wrapper">
+                                <h3><span class="dizme_tm_counter" data-from="0" data-to="{{about.experience}}" data-speed="2000">0</span></h3>
+                                <span class="name">
+                                    Years of<br />
+                                    Experience
+                                </span>
+                            </div>
+                        </div>
+                        <div class="numbers project">
+                            <div class="wrapper">
+                                <h3><span class="dizme_tm_counter" data-from="0" data-to="{{about.number_of_project}}" data-speed="2000"></span></h3>
+                                <span class="name">
+                                    Total<br />
+                                    Projects
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="title wow fadeInUp" data-wow-duration="1s">
+                        <span>{{about.profession}}</span>
+                        <h3>{{about.heading}}</h3>
+                    </div>
+                    <div class="text wow fadeInUp" data-wow-duration="1s">
+                        <p>
+                            {{about.description}}
+        
+                        </p>
+                    </div>
+                    <div class="dizme_tm_button wow fadeInUp" data-wow-duration="1s">
+                        <a class="anchor" href="#contact"><span>Hire Me</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="brush_1 wow fadeInLeft" data-wow-duration="1s"><img src="{% static 'img/brushes/about/1.png' %}" alt /></div>
+        <div class="brush_2 wow fadeInRight" data-wow-duration="1s"><img src="{% static 'img/brushes/about/2.png' %}" alt /></div>
+    </div>
+</div>
