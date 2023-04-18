@@ -12,16 +12,6 @@ class FirstPage(models.Model):
     linkedln_link=models.CharField(max_length=2000,null=True,blank=True)
     instagram_link=models.CharField(max_length=2000,null=True,blank=True)
     
-class FirstPage(models.Model):
-    name = models.CharField(max_length=100,default='Krishna Aryan')
-    photo = models.URLField(upload_to='media/profile_image',blank=True, default='static/img/slider/avatar.png')
-    role = models.CharField(max_length=150, default='Software Developer')
-    about_short = models.CharField(max_length=150, default='Hello please write something')
-    facebook_url = models.CharField(max_length=2000, null=True, blank=True, default='https://www.facebook.com/')
-    twitter_link = models.CharField(max_length=2000, null=True, blank=True, default='https://twitter.com/')
-    linkedln_link = models.CharField(max_length=2000, null=True, blank=True, default='https://www.linkedin.com/')
-    instagram_link = models.CharField(max_length=2000, null=True, blank=True, default='https://www.instagram.com/')
-
     
 class About(models.Model):
     profession=models.CharField(max_length=50)
