@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import *
+from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
@@ -27,13 +28,31 @@ def index(request):
 
 from .forms import ContactForm
 
-def contact(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            # redirect to success page or display success message
-            return redirect('success')
-    else:
-        form = ContactForm()
-    return render(request, 'index.html', {'form': form})
+from django.db import IntegrityError
+
+import time
+from django.shortcuts import redirect
+
+def submitform(request):
+    if request.method == "POST":
+        contact = Contact()
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        
+        contact.name = name
+        contact.email = email
+        contact.phone = phone
+        contact.subject = subject
+        contact.message = message
+        
+        try:
+            contact.save()
+            time.sleep(5)  # Delay the response by 5 seconds
+            return HttpResponse("<h3> Your Form Has Been Received, I will contact You soon...😊 </h3><script>setTimeout(function(){window.location.href='/';},5000);</script>")
+        except IntegrityError as e:
+            return HttpResponse("<h3> Error Occurred While Saving Data: {}</h3>".format(str(e)))
+            
+    return render(request, 'index.html')

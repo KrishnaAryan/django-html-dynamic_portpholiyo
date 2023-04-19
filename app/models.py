@@ -12,6 +12,8 @@ class FirstPage(models.Model):
     linkedln_link=models.CharField(max_length=2000,null=True,blank=True)
     instagram_link=models.CharField(max_length=2000,null=True,blank=True)
     
+    def __str__(self):
+        return self.name + "--" + self.role
     
 class About(models.Model):
     profession=models.CharField(max_length=50)
@@ -21,11 +23,16 @@ class About(models.Model):
     experience=models.IntegerField()
     number_of_project=models.IntegerField()
     
+    def __str__(self):
+        return self.profession + "--" + str(self.experience )
+    
 class Portfolio(models.Model):
     feature_image=models.ImageField(upload_to='media/portfolio/images')
     heading=models.CharField(max_length=70)
     description = RichTextField()
     photo=models.ImageField(upload_to='media/portfolio/images')
+    def __str__(self):
+        return self.heading
     
 class PortfolioIimage(models.Model):
     chose=models.ForeignKey(Portfolio, on_delete=models.CASCADE)
@@ -35,6 +42,8 @@ class Skill(models.Model):
     chose=models.ForeignKey(Portfolio, on_delete=models.CASCADE)
     skill=models.CharField(max_length=200)
     level=models.IntegerField()
+    def __str__(self):
+        return self.skill + "--" + self.level
     
 class Experience(models.Model):
     company_logo=models.ImageField(upload_to='media/company/images')
@@ -43,6 +52,8 @@ class Experience(models.Model):
     start_and_end_Date=models.CharField(max_length=20)
     about_job=RichTextField()
     roles_and_responsibilities=RichTextField()
+    def __str__(self):
+        return self.company_nane + "--" + self.job_role + "--" + self.start_and_end_Date
     
 class Blog(models.Model):
     image=models.ImageField(upload_to='media/portfolio/blog')
@@ -50,11 +61,16 @@ class Blog(models.Model):
     name=models.CharField(max_length=100)
     about=models.CharField(max_length=200)
     write_your_blog=RichTextField()
+    def __str__(self):
+        return self.name + "--" + self.date
     
 class YourContactInfo(models.Model):
     address=models.TextField()
     email=models.EmailField()
     phone_number=models.CharField(max_length=15)
+    
+    def __str__(self):
+        return self.address + "--" + self.email + "--" + self.phone_number
 
 
 class Contact(models.Model):
@@ -65,10 +81,12 @@ class Contact(models.Model):
     message = models.TextField()
 
     def __str__(self):
-        return self.name
+        return self.name + "--" + self.email + "--" + self.phone + "--" + self.subject
  
  
  
 class Resume(models.Model):
     upload_resume=models.FileField(upload_to='media/Resume')
+    def __str__(self):
+        return self.upload_resume
      

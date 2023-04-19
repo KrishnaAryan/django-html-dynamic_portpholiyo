@@ -6,7 +6,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('',views.index, name='index'),
-    path('contact',views.contact, name='contact'),
+    path('submitform',views.submitform, name='submitform'),
     
     
 
