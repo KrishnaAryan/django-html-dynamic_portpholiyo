@@ -43,7 +43,7 @@ class Skill(models.Model):
     skill=models.CharField(max_length=200)
     level=models.IntegerField()
     def __str__(self):
-        return self.skill + "--" + self.level
+        return self.skill + "--" + str(self.level)
     
 class Experience(models.Model):
     company_logo=models.ImageField(upload_to='media/company/images')
